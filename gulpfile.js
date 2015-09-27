@@ -13,11 +13,11 @@ var reload = browserSync.reload;
 var theme = 'squarespace';
 var source = {
 
-  styles: theme + '/source/styles/**/*.scss',
-  scripts: theme + '/source/scripts/*.js',
-  images: theme + '/source/images/*.{png,jpg,gif}',
-  svgs: theme + '/source/images/*.svg',
-  plugins: theme + '/source/vendor'
+  styles: 'source/styles/**/*.scss',
+  scripts: 'source/scripts/*.js',
+  images: 'source/images/*.{png,jpg,gif}',
+  svgs: 'source/images/*.svg',
+  plugins: 'source/vendor'
 
 };
 var assets = {
@@ -66,7 +66,7 @@ gulp.task( 'deploy', $.shell.task(
     'rm -rf .git'
   ],
   {
-    cwd: './sqs_template'
+    cwd: './squarespace'
   }
 ));
 
@@ -74,7 +74,7 @@ gulp.task( 'deploy', $.shell.task(
 // COMPILE STYLESHEETS ================================================
 gulp.task('styles', function () {
 
-  return gulp.src(theme + '/source/styles/*.scss')
+  return gulp.src('source/styles/*.scss')
     .pipe($.changed('styles', {
       extension: '.scss'
     }))
