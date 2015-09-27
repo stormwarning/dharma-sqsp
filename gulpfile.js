@@ -61,8 +61,8 @@ gulp.task( 'deploy', $.shell.task(
     'git init',
     'git checkout --orphan ' + theme,
     'git add --all',
-    'git commit --quiet --message "TESTING GIT DEPLOY"',
-    'git push --prune --force https://tidaltheory.squarespace.com/template.git ' + squarespace + ':master',
+    'git commit --quiet --message "Deploying to Squarespace"',
+    'git push --prune --force https://tidaltheory.squarespace.com/template.git ' + theme + ':master',
     'rm -rf .git'
   ],
   {
